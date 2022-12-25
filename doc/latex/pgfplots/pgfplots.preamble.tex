@@ -91,6 +91,7 @@
 
 \usepackage{textcomp}
 \usepackage{booktabs}
+\usepackage{colortbl}
 
 \usepackage{calc}
 \usepackage[formats]{listings}
@@ -117,13 +118,13 @@
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
 
-\ifpdf
-    % this allows to disable the clickable lib from command line using
-    % \pdflatex '\def\pgfplotsclickabledisabled{1}\input{pgfplots.tex}'
-    \expandafter\ifx\csname pgfplotsclickabledisabled\endcsname\relax
-        \usepgfplotslibrary{clickable}
-    \fi
-\fi
+% \ifpdf
+%     % this allows to disable the clickable lib from command line using
+%     % \pdflatex '\def\pgfplotsclickabledisabled{1}\input{pgfplots.tex}'
+%     \expandafter\ifx\csname pgfplotsclickabledisabled\endcsname\relax
+%         \usepgfplotslibrary{clickable}
+%     \fi
+% \fi
 
 %\usepackage{fp}
 % ATTENTION:
@@ -271,8 +272,8 @@
 
 \newcommand\Tikz{Ti\textit kZ}
 \newcommand\PGF{\textsc{pgf}}
-\newcommand\PGFPlots{\pgfplotsmakefilelinkifuseful{pgfplots}{\textsc{pgfplots}}}
-\newcommand\PGFPlotstable{\pgfplotsmakefilelinkifuseful{pgfplotstable}{\textsc{PgfplotsTable}}}
+\newcommand\PGFPlots{\textsc{pgfplots}}
+\newcommand\PGFPlotstable{\textsc{PgfplotsTable}}
 
 \makeindex
 
