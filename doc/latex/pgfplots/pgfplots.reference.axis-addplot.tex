@@ -1,5 +1,5 @@
 
-\section{The Axis Environments}
+\section[reference.axis]{The Axis Environments}
 
 There is an axis environment for linear scaling, two for semi-logarithmic
 scaling and one for double-logarithmic scaling.
@@ -74,7 +74,7 @@ scaling and one for double-logarithmic scaling.
 \noindent with properly set variables `|xmode|' and `|ymode|' (see below).
 
 
-\section{The \protect\texttt{\protect\textbackslash addplot} Command: Coordinate Input}
+\section[reference.addplot]{The \protect\texttt{\protect\textbackslash addplot} Command: Coordinate Input}
 \label{sec:addplot}
 
 {
@@ -267,8 +267,8 @@ plot coordinate).
                 \text{ and (for 3D plots) } T_z(y) = 10^{s_z} \cdot z - a_z
             \]
         %
-        with properly chosen integers $s_x, s_y, s_z \in \Z$ and shifts
-        $a_x,a_y, a_z\in \R$. Page~\pageref{pgfplots:disabledatascaling} contains a
+        with properly chosen integers $s_x, s_y, s_z \in \mathbb{Z}$ and shifts
+        $a_x,a_y, a_z\in \mathbb{R}$. Page~\pageref{pgfplots:disabledatascaling} contains a
         description of |disabledatascaling| and provides more details about
         the transformation.\index{Accuracy!Floating Point in \PGFPlots}
     \item Some of the coordinate input routines use the powerful
@@ -1113,7 +1113,8 @@ prefix can always be omitted when used in a \PGFPlots{} method.
     |\addplot expression |\marg{math expression}|;|
 \end{addplotoperation}
 
-\begin{addplotoperation}[]{(\meta{$x$ expression},\meta{$y$ expression})}{}
+\begin{addplotoperation}[]{(\meta{x expression},\meta{y expression})}{}
+% \begin{addplotoperation}[]{(\meta{$x$ expression},\meta{$y$ expression})}{}
     A variant of \verbpdfref{\addplot expression} which allows to provide
     different coordinate expressions for the $x$- and $y$-coordinates. This can
     be used to generate parameterized plots.
@@ -1136,9 +1137,9 @@ prefix can always be omitted when used in a \PGFPlots{} method.
 }
     Sets the function's domain(s) for |\addplot expression| and
     |\addplot gnuplot|. Two dimensional plot expressions are defined as
-    functions $f\colon [x_1,x_2] \to \R$ and \meta{$x_1$} and \meta{$x_2$} are
+    functions $f\colon [x_1,x_2] \to \mathbb{R}$ and \meta{$x_1$} and \meta{$x_2$} are
     set with |domain|. Three dimensional plot expressions use functions
-    $f\colon [x_1,x_2] \times [y_1,y_2] \to \R$ and \meta{$y_1$} and
+    $f\colon [x_1,x_2] \times [y_1,y_2] \to \mathbb{R}$ and \meta{$y_1$} and
     \meta{$y_2$} are set with |y domain|. If |y domain| is empty, $[y_1,y_2] =
     [x_1,x_2]$ is assumed for three dimensional plots (see
     page~\pageref{cmd:addplot3:expr} for details about three dimensional plot
@@ -1310,8 +1311,9 @@ both file input and modifications by means of mathematical expressions.
     special command `|\thisrow|\marg{column name}' within \meta{expression} (or
     |\thisrowno|\meta{column index}).
     %
+% EXAMPLE DOESN'T COMPILE
 \pgfplotstableset{begin table={\begin{tabular}[b]}}
-\begin{codeexample}[vbox]
+\begin{codeexample}[pre={\begin{lateximage}},post={\end{lateximage}}]
 \pgfplotstabletypeset[columns={maxlevel,L2}]{plotdata/newexperiment1.dat}
 
 \begin{tikzpicture}
@@ -1634,7 +1636,7 @@ pdflatex -shell-escape filename.tex.
     (for example, a contour plot, a complicated shaded surface\footnote{See
     also Section~\ref{sec:pgfplots:surfplots} for an overview of \PGFPlots{}
     methods to draw shaded surfaces.} or a large point cluster) with an
-    external program like Matlab$^\text{\textregistered}$ or |gnuplot|. The graphics,
+    external program like Matlab\textregistered{} or |gnuplot|. The graphics,
     however, should \emph{not} contain an axis or descriptions. Then, we use
     |\includegraphics| and a \PGFPlots{} axis which fits exactly on top of the
     imported graphics.
@@ -1708,7 +1710,7 @@ print -dpng external1
             computes a tight bounding box around every picture element.
 
             However, some images may contain a rectangular path which is as
-            large as the bounding box (Matlab$^\text{\textregistered}$
+            large as the bounding box (Matlab\textregistered{}
             computes such |.eps| images). In this case, use the ``Ungroup''
             method (context menu of |inkscape|) as often as necessary and
             remove such a path.
@@ -2049,9 +2051,9 @@ Figure~\ref{fig:plotgraphics3d} (left).
     \hbox to \linewidth{\hfill
         \includegraphics{plotdata/plotgraphics3dsurfmatlab.png}%
         \hfill
-        \begin{minipage}[b][4cm][c]{2.6cm}%
-        \includegraphics[width=\linewidth]{plotdata/plotgraphics_gimpmeasure.png}%
-        \end{minipage}
+        % \begin{minipage}[b][4cm][c]{2.6cm}%
+        \includegraphics[width=4cm]{plotdata/plotgraphics_gimpmeasure.png}%
+        % \end{minipage}
         \hfill
     }
     \caption{Using Matlab to extract image coordinates (left) and Gimp to

@@ -1,5 +1,5 @@
 
-\section{Alignment Options}
+\section[reference.alignment]{Alignment Options}
 \label{sec:pgfplots:sec:align}
 
 \subsection{Basic Alignment}
@@ -431,7 +431,8 @@ here \tikz[baseline]\fill [red] (0,10pt) circle(3pt); another one.
     Restrictions''. Here is just a small example for array alignment by means
     of |tabular|, |baseline| and the |trim left|/|trim right| features:
     %
-\begin{codeexample}[vbox]
+%\begin{codeexample}[vbox] % Dominik: vbox trips up lwarp (makes a big image)
+\begin{codeexample}[]
 \pgfplotsset{
     small,
     title=Trimmed bounding boxes

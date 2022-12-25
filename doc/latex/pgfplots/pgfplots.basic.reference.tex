@@ -1,5 +1,5 @@
 
-\chapter{Utilities and Basic Level Commands}
+\part[lowlevel]{Utilities and Basic Level Commands}
 \label{cha:pgfplots:lowlevel}
 
 This chapter documents commands which provide access to more basic elements of
@@ -11,7 +11,7 @@ However, most elements in this section are only interesting for advanced users
 -- and perhaps only for special cases.
 
 
-\section{Utility Commands}
+\section[utility-commands]{Utility Commands}
 
 \begin{command}{\foreach \meta{variables} |in| \meta{list} \marg{commands}}
     A powerful loop command provided by \Tikz{}, see~\cite[Section
@@ -260,7 +260,7 @@ The result is `\pgfmathprintnumber{\pgfmathresult}'.
 \end{commandlist}
 
 
-\section[Commands Inside Of PGFPlots Axes]
+\section[commands-inside-axes]
         {Commands Inside Of {\normalfont\PGFPlots{}} Axes}
 
 \begin{command}{\autoplotspeclist}
@@ -317,7 +317,7 @@ The result is `\pgfmathprintnumber{\pgfmathresult}'.
 \end{command}
 
 
-\section{Path Operations}
+\section[path-operations]{Path Operations}
 
 \begin{commandlist}{\path,\draw,\fill,\node,\matrix}
     These commands are \Tikz{} drawing commands all of which are documented
@@ -337,14 +337,14 @@ The result is `\pgfmathprintnumber{\pgfmathresult}'.
 
 {\catcode`\|=12
 \begin{pathoperation}[noindex]{|-}{\meta{coordinate}}
-\pgfmanualpdflabel[\catcode`\|=12 ]{|-}{}%
+% \pgfmanualpdflabel[\catcode`\|=12 ]{|-}{}%
     A \Tikz{} path operation which connects the current point and
     \meta{coordinate} with \emph{two} straight lines: first vertical, then
     horizontal.
 \end{pathoperation}
 
 \begin{pathoperation}[noindex]{-|}{\meta{coordinate}}
-\pgfmanualpdflabel[\catcode`\|=12 ]{-|}{}%
+% \pgfmanualpdflabel[\catcode`\|=12 ]{-|}{}%
     A \Tikz{} path operation which connects the current point and
     \meta{coordinate} with \emph{two} straight lines: first horizontal, then
     vertical.
@@ -389,7 +389,7 @@ The result is `\pgfmathprintnumber{\pgfmathresult}'.
 \end{command}
 
 
-\section{Specifying Basic Coordinates}
+\section[basic-coordinates]{Specifying Basic Coordinates}
 \label{sec:basic:coordinates}
 
 \begin{commandlist}{%
@@ -629,7 +629,7 @@ The result is `\pgfmathprintnumber{\pgfmathresult}'.
     third character is for the third dimension, the $z$-axis. It should be left
     at `|0|' for two dimensional plots. However, \emph{one} of the three
     characters should be `|v|', meaning the axis \underline varies. For
-    example, |v01| denotes $\{ (x,y_{\min},z_{\max}) \vert x \in \R \}$.
+    example, |v01| denotes $\{ (x,y_{\min},z_{\max}) \vert x \in \mathbb{R} \}$.
 
     The second argument, \meta{coordinate} is the logical coordinate on that
     axis. Since two coordinates of the axis are fixed, \meta{coordinate} refers
@@ -716,14 +716,14 @@ The result is `\pgfmathprintnumber{\pgfmathresult}'.
 \end{texif}
 
 
-\section{Accessing Axis Limits}
+\section[access-axis-limits]{Accessing Axis Limits}
 
 It is also possible to access axis limits during the visualization phase,
 i.e.\@ during |\end{axis}|. Please refer to the reference documentation for
 |xmin| on page~\pageref{page:access:limits}.
 
 
-\section{Accessing Point Coordinate Values}
+\section[access-values]{Accessing Point Coordinate Values}
 
 During the visualization phase, \PGFPlots{} provides access to the currently
 processed coordinate and its values.
@@ -937,7 +937,7 @@ current point's $x$, $y$, $z$, and color data can be accessed.
 \end{command}
 
 
-\section{Layer Access}
+\section[layer-access]{Layer Access}
 
 \begin{command}{\pgfplotsonlayer\marg{layer name}}
     A low-level command which will check if the current axis has layer support

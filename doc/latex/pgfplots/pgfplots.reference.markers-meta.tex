@@ -1,5 +1,5 @@
 
-\section{Markers, Linestyles, (Background) Colors and Colormaps}
+\section[reference.markers]{Markers, Linestyles, (Background) Colors and Colormaps}
 \label{sec:markers}
 
 The following options of \Tikz{} are available to plots.
@@ -3624,7 +3624,7 @@ more complex ones.
 \end{pgfplotskey}
 
 
-\section{Providing Color Data -- Point Meta}
+\section[reference.meta]{Providing Color Data -- Point Meta}
 \label{sec:pgfplots:point:meta}
 
 \PGFPlots{} provides features which modify plots depending on a special
@@ -3713,7 +3713,7 @@ manual.
     for |scatter src| on page~\pageref{pgfplots:scatter:src} covers the same
     topics. However, the main reference for |point meta| is here.
     %
-    \begin{description}
+    \begin{itemize}
         \item[\declaretext{none}] The initial choice |none| disables point
             meta data, resulting in no computational work. Any other choice
             will activate the computation of upper and lower ranges for point
@@ -3910,7 +3910,7 @@ manual.
             i.e.\@
 
             |point meta={symbolic=|\marg{symbol}|}|.
-    \end{description}
+    \end{itemize}
 
     As already mentioned, a main application of point meta data is to determine
     (marker/face/edge) colors using a linear map into the range $[0,1000]$

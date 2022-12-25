@@ -1,5 +1,5 @@
 
-\section{Three Dimensional Plot Types}
+\section[reference.3dplots]{Three Dimensional Plot Types}
 \label{sec:3d}
 
 {
@@ -69,7 +69,7 @@ Section~\ref{sec:pgfplots:export}.
     Furthermore, \verbpdfref{\addplot3} has a way to decide whether a
     \emph{line} visualization or a \emph{mesh} visualization has to be
     done\index{3d: line or mesh}. The first one is a map from one dimension
-    into $\R^3$ and the latter one a map from two dimensions to $\R^3$. Here,
+    into $\mathbb{R}^3$ and the latter one a map from two dimensions to $\mathbb{R}^3$. Here,
     the keys |mesh/rows| and |mesh/cols| are used to define mesh sizes (matrix
     sizes). Usually, you don't have to care about that because the coordinate
     input routines already allow either one- or two-dimensional structure.
@@ -354,7 +354,7 @@ Section~\ref{sec:pgfplots:export}.
     Again, note the subtle difference to the common matrix indexing where a
     column has the second index fixed. \PGFPlots{} refers to the way one would
     write down a function on a sheet of paper (this is consistent with how
-    Matlab$^\text{\textregistered}$ displays discrete functions with matrices).
+    Matlab\textregistered{} displays discrete functions with matrices).
 \end{pgfplotskey}
 
 \begin{addplot3operation}[]{\marg{math expression}}{}
@@ -366,7 +366,7 @@ Section~\ref{sec:pgfplots:export}.
 
     The method \verbpdfref{\addplot3} \marg{math expr} visualizes the function
     $f(x,y) = $\meta{math expr} where $ f \colon [x_1,x_2] \times [y_1,y_2] \to
-    \R$. The interval $[x_1,x_2]$ is determined using the |domain| key, for
+    \mathbb{R}$. The interval $[x_1,x_2]$ is determined using the |domain| key, for
     example using |domain=0:1|. The interval $[y_1,y_2]$ is determined using
     the |y domain| key. If |y domain| is empty, $[y_1,y_2] = [x_1,x_2]$ will be
     assumed. If |y domain=0:0| (or any other interval of length zero), it is
@@ -418,7 +418,7 @@ Section~\ref{sec:pgfplots:export}.
     \verbpdfref{\addplot3 expression} \marg{math expression}|;|
 \end{addplot3operation}
 
-\begin{addplot3operation}[]{(\meta{$x$ expression},\meta{$y$ expression},\meta{$z$ expression})}{}
+\begin{addplot3operation}[]{(\meta{x expression},\meta{y expression},\meta{z expression})}{}
     A variant of \verbpdfref{\addplot3 expression} which allows to provide
     different coordinate expressions for the $x$-, $y$- and $z$-coordinates.
     This can be used to generate parameterized plots.
@@ -1081,7 +1081,7 @@ each input coordinate. The color for each box is determined by
     \noindent There are (currently) two possibilities to determine the single
     color for every segment:
     %
-    \begin{description}
+    \begin{itemize}
         \item[\declaretext{flat corner}] Uses the color data of one vertex to
             color the segment. The color of the \emph{first} vertex
             determines the color of the entire segment. Note that \PGFPlots{}
@@ -1095,7 +1095,7 @@ each input coordinate. The color for each box is determined by
         \item[\declaretext{flat mean}] Uses the mean of all four color data
             values as segment color. This is the initial value as it provides
             symmetric colors for symmetric functions.
-    \end{description}
+    \end{itemize}
     %
     The choice |flat| is actually the same as |flat mean|. Please note that
     |shader=flat mean| and |shader=flat corner| also influence mesh plots --
