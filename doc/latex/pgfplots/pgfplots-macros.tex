@@ -3,23 +3,59 @@
 
 \input{pgfmanual-en-macros.tex}
 
+\makeatletter
+\input{pgfplotsoldpgfsupp_pgfmanual.prettyprinter.code.tex}
+\input{pgfplotsoldpgfsupp_pgfmanual.pdflinks.code.tex}
+\makeatother
+\def\pgfmanual@warning#1{\immediate\write16{! Package pgfmanual Warning: #1}}%
+
+
+\pgfkeys{
+	% set this to 'false' to disable auto reference generation.
+	% However, a little bit runtime overhead will still remain
+	% (and the \pgfmanualpdflabel commands will still be used)
+	/pdflinks/codeexample links=true,
+	%
+	/codeexample/prettyprint/cs arguments/tikzset/.initial=1,
+	/codeexample/prettyprint/cs/tikzset/.code 2 args={\pgfmanualpdfref{#1}{#1}\{\pgfmanualprettyprintpgfkeys{#2}\pgfmanualclosebrace},
+	/codeexample/prettyprint/cs arguments/usetikzlibrary/.initial=1,
+	/codeexample/prettyprint/cs/usetikzlibrary/.code 2 args={\pgfmanualpdfref{#1}{#1}\{\pgfmanualpdfref{#2}{#2}\pgfmanualclosebrace},
+	/codeexample/prettyprint/cs arguments/usepgflibrary/.initial=1,
+	/codeexample/prettyprint/cs/usepgflibrary/.code 2 args={\pgfmanualpdfref{#1}{#1}\{\pgfmanualpdfref{#2}{#2}\pgfmanualclosebrace},
+	%
+	%
+	%
+	% whenever an unqualified key is found, the following key prefix
+	% list is tried to find a match.
+	/pdflinks/search key prefixes in={/tikz/,/pgf/},
+	%
+	% the link prefix written to the pdf file:
+	/pdflinks/internal link prefix=pgf,
+	%
+	/pdflinks/warnings=false,
+	% for debugging:
+	/pdflinks/show labels=false,
+}%
+
 
 \def\pgfplotsifdocpackageuptodate#1#2{%
     \pgfkeysifdefined{/codeexample/prettyprint/word/.@cmd}{#1}{#2}
 }%
 
-\pgfplotsiffileexists{pgfmanual.sty}{%
-    \RequirePackage{pgfmanual}
-    \pgfplotsifdocpackageuptodate{}{%
-        \makeatletter
-        \input{pgfplotsoldpgfsupp_pgfmanual.code.tex}
-        \makeatother
-    }%
-}{%
-    \makeatletter
-    \input{pgfplotsoldpgfsupp_pgfmanual.code.tex}
-    \makeatother
-}%
+
+
+% \pgfplotsiffileexists{pgfmanual.sty}{%
+%     \RequirePackage{pgfmanual}
+%     \pgfplotsifdocpackageuptodate{}{%
+%         \makeatletter
+%         \input{pgfplotsoldpgfsupp_pgfmanual.code.tex}
+%         \makeatother
+%     }%
+% }{%
+%     \makeatletter
+%     \input{pgfplotsoldpgfsupp_pgfmanual.code.tex}
+%     \makeatother
+% }%
 
 \makeatletter
 \def\pgfplotsmakefilelinkifuseful#1#2{%
@@ -315,7 +351,7 @@
       \declare{\texttt{#2}} \texttt{#3} \textcolor{gray}{\meta{trailing path commands}}\texttt{;}}%
       \unskip
      \nobreak
-    \pgfmanualentryheadline{\textcolor{gray}{{\ttfamily\char`\\addplot3}} $\dotsc$}%
+    \pgfmanualentryheadline{\textcolor{gray}{{\ttfamily\char`\\addplot3}} \dots}%
     \def\pgfmanualtest{#1}%
     \ifx\pgfmanualtest\@empty%
       \index{#2@\protect\textcolor{gray}{\protect\texttt{plot}}\protect\texttt{ #2}}%
