@@ -729,7 +729,6 @@ in one axis can be stacked on top of each other or aligned next to each other.
 
 \begin{pgfplotsxykey}{\x ticklabel interval boundaries}
     These are style keys which set |x tick label as interval| (see
-    \ref{key:pgfplots:ticklabelasinterval} for details) and configure
     the tick appearance to be \meta{start} -- \meta{end} for each tick
     interval.
 \end{pgfplotsxykey}
@@ -738,13 +737,11 @@ in one axis can be stacked on top of each other or aligned next to each other.
 \subsection{Histograms}
 
 This section has been moved to the |statistics| library, see
-Section~\ref{sec:histograms}.
 
 
 \subsection{Box Plots}
 
 This section has been moved to the |statistics| library, see
-Section~\ref{sec:boxplots}.
 
 
 \subsection{Comb Plots}
@@ -905,7 +902,7 @@ horizontal/vertical lines instead of rectangles.
         starts, |y| the $y$-coordinate and so on.
 
 
-        \paragraph{Attention:}
+        \textbf{Attention:}
 
         the fact that |x| refers to \emph{the final $x$-coordinate} means that
         parametric plots \emph{should use $t$ as variable}\footnote{Sorry for
@@ -1883,7 +1880,6 @@ they contain only markers. They are enabled using the |only marks| key of
     options like size and color can be specified using the
     |mark options=|\meta{style options} key (or by modifying the |every mark|
     style). The available markers along with the accepted style options can be
-    found in Section~\ref{sec:markers}.
 \end{plottype}
 
     \label{pgfplots:scatter}
@@ -1948,8 +1944,6 @@ mandatory, the rest allows fine grained control over marker appearance options.
     as |scatter| is activated and no different choice has been made. It needs
     to be provided as \meta{option} for |\addplot| to configure the value used
     to determine marker appearances. Actually, |scatter src| is nothing but an
-    alias for |point meta|, so the main documentation for this key at~\ref{pgfplots:pointmeta}. 
-    However, we summarize the choices here
     together with scatter plot examples.
 
     Usually, |scatter src| provides input data (numeric or string type) which
@@ -2113,7 +2107,7 @@ mandatory, the rest allows fine grained control over marker appearance options.
     |@post marker code| (see below).
 
 
-    \paragraph{Remark:}
+    \textbf{Remark:}
 
     The style |use mapped color| \emph{re}defines |@pre marker code| and
     |@post marker code|. There is a starred variant
@@ -2221,7 +2215,7 @@ mandatory, the rest allows fine grained control over marker appearance options.
     separated list of \meta{label}|=|\marg{style options}.
 
 
-    \paragraph{Attention:}
+    \textbf{Attention:}
 
     The keys |every mark| and |mark options| have \emph{no effect} when used
     inside of \meta{styles for each class name}! So, instead of assigning
@@ -2229,7 +2223,7 @@ mandatory, the rest allows fine grained control over marker appearance options.
     to markers anyway.
 
 
-    \paragraph{Remark:}
+    \textbf{Remark:}
 
     To use |\label| and |\ref| in conjunction with |scatter/classes|, you can
     provide the class labels as optional arguments to |\label| in square
@@ -2257,12 +2251,12 @@ First class is \ref{label:for:first:class}, second is \ref{label:for:second:clas
 \end{codeexample}
 
 
-    \paragraph{Remark:}
+    \textbf{Remark:}
 
     It is possible to click into the plot to display labels with mouse popups,
     see the |clickable coords| key of the |clickable| library.
 
-    \paragraph{Remark:}
+    \textbf{Remark:}
 
     The style |scatter/classes| \emph{re}defines |@pre marker code| and
     |@post marker code|. There is a starred variant
@@ -2373,7 +2367,7 @@ First class is \ref{label:for:first:class}, second is \ref{label:for:second:clas
     an example of |nodes near coords|.
 
 
-    \paragraph{Remarks and Details:}
+    \textbf{Remarks and Details:}
 
     \begin{itemize}
         \item |nodes near coords| uses the same options for line styles and
@@ -2547,7 +2541,6 @@ First class is \ref{label:for:first:class}, second is \ref{label:for:second:clas
         \item |scatter/classes|.
     \end{itemize}
 
-    See also the examples in Section~\ref{sec:coordinate:style}.
 \end{pgfplotskeylist}
 
 \begin{pgfplotskey}{scatter/position=\mchoice{absolute,relative} (initially relative)}
@@ -2799,7 +2792,6 @@ achieved using the |unbounded coords| key combined with coordinate values
 
     For plot expression and its friends, it is more likely to get very large
     floating point numbers instead of |inf|. In this case, consider using the
-    |restrict x to domain| key described at~\ref{key:restrict:x:to:domain}.
 
     The |unbounded coords=jump| method does also work for mesh/surface plots:
     every face adjacent to an unbounded coordinate will be discarded in this
@@ -2920,7 +2912,7 @@ i.e.\@ to
 \end{codeexample}
 
 
-\paragraph{Limitations}
+\textbf{Limitations}
 
 of this approach: coordinate filtering by means of |point meta| still includes
 the omitted patch segments into the limit computation. This is different than
@@ -2954,7 +2946,6 @@ other options about surface and mesh plots.
 \subsection{Polar Coordinates / Polar Axes}
 
 Polar coordinates can be provided in any kind of axis by means of
-|data cs=polar|, please refer to its reference documentation~\pageref{key:data:cs}.
 
 Polar axes are available by means of |\usepgfplotslibrary{polar}|; please refer
 to Section~\ref{sec:polar}.
@@ -2963,13 +2954,11 @@ to Section~\ref{sec:polar}.
 \subsection{Tieline Plots}
 
 Tieline plots are a special application in |ternaryaxis|. They are part of
-|\usepgfplotslibrary{ternary}|; please refer to Section~\ref{sec:tieline}.
 
 
 \subsection{Smith Charts}
 
 Smith charts have a special coordinate system and a part of
 |\usepgfplotslibrary{smithchart}|; please refer to
-Section~\ref{sec:smithcharts}.
 
 }
