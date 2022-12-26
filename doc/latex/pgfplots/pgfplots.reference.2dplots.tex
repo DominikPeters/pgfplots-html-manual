@@ -729,7 +729,7 @@ in one axis can be stacked on top of each other or aligned next to each other.
 
 \begin{pgfplotsxykey}{\x ticklabel interval boundaries}
     These are style keys which set |x tick label as interval| (see
-    page~\pageref{key:pgfplots:ticklabelasinterval} for details) and configure
+    \ref{key:pgfplots:ticklabelasinterval} for details) and configure
     the tick appearance to be \meta{start} -- \meta{end} for each tick
     interval.
 \end{pgfplotsxykey}
@@ -738,13 +738,13 @@ in one axis can be stacked on top of each other or aligned next to each other.
 \subsection{Histograms}
 
 This section has been moved to the |statistics| library, see
-Section~\ref{sec:histograms} on page~\pageref{sec:histograms}.
+Section~\ref{sec:histograms}.
 
 
 \subsection{Box Plots}
 
 This section has been moved to the |statistics| library, see
-Section~\ref{sec:boxplots} on page~\pageref{sec:boxplots}.
+Section~\ref{sec:boxplots}.
 
 
 \subsection{Comb Plots}
@@ -1883,7 +1883,7 @@ they contain only markers. They are enabled using the |only marks| key of
     options like size and color can be specified using the
     |mark options=|\meta{style options} key (or by modifying the |every mark|
     style). The available markers along with the accepted style options can be
-    found in Section~\ref{sec:markers} on page~\pageref{sec:markers}.
+    found in Section~\ref{sec:markers}.
 \end{plottype}
 
     \label{pgfplots:scatter}
@@ -1948,8 +1948,8 @@ mandatory, the rest allows fine grained control over marker appearance options.
     as |scatter| is activated and no different choice has been made. It needs
     to be provided as \meta{option} for |\addplot| to configure the value used
     to determine marker appearances. Actually, |scatter src| is nothing but an
-    alias for |point meta|, so the main documentation for this key is on
-    page~\pageref{pgfplots:pointmeta}. However, we summarize the choices here
+    alias for |point meta|, so the main documentation for this key at~\ref{pgfplots:pointmeta}. 
+    However, we summarize the choices here
     together with scatter plot examples.
 
     Usually, |scatter src| provides input data (numeric or string type) which
@@ -2547,8 +2547,7 @@ First class is \ref{label:for:first:class}, second is \ref{label:for:second:clas
         \item |scatter/classes|.
     \end{itemize}
 
-    See also the examples in Section~\ref{sec:coordinate:style} on
-    page~\pageref{sec:coordinate:style}.
+    See also the examples in Section~\ref{sec:coordinate:style}.
 \end{pgfplotskeylist}
 
 \begin{pgfplotskey}{scatter/position=\mchoice{absolute,relative} (initially relative)}
@@ -2800,8 +2799,7 @@ achieved using the |unbounded coords| key combined with coordinate values
 
     For plot expression and its friends, it is more likely to get very large
     floating point numbers instead of |inf|. In this case, consider using the
-    |restrict x to domain| key described on
-    page~\pageref{key:restrict:x:to:domain}.
+    |restrict x to domain| key described at~\ref{key:restrict:x:to:domain}.
 
     The |unbounded coords=jump| method does also work for mesh/surface plots:
     every face adjacent to an unbounded coordinate will be discarded in this
@@ -2956,8 +2954,7 @@ other options about surface and mesh plots.
 \subsection{Polar Coordinates / Polar Axes}
 
 Polar coordinates can be provided in any kind of axis by means of
-|data cs=polar|, please refer to its reference documentation on
-page~\pageref{key:data:cs}.
+|data cs=polar|, please refer to its reference documentation~\pageref{key:data:cs}.
 
 Polar axes are available by means of |\usepgfplotslibrary{polar}|; please refer
 to Section~\ref{sec:polar}.
@@ -2966,14 +2963,13 @@ to Section~\ref{sec:polar}.
 \subsection{Tieline Plots}
 
 Tieline plots are a special application in |ternaryaxis|. They are part of
-|\usepgfplotslibrary{ternary}|; please refer to Section~\ref{sec:tieline} on
-page~\pageref{sec:tieline}.
+|\usepgfplotslibrary{ternary}|; please refer to Section~\ref{sec:tieline}.
 
 
 \subsection{Smith Charts}
 
 Smith charts have a special coordinate system and a part of
 |\usepgfplotslibrary{smithchart}|; please refer to
-Section~\ref{sec:smithcharts} on page~\pageref{sec:smithcharts}.
+Section~\ref{sec:smithcharts}.
 
 }

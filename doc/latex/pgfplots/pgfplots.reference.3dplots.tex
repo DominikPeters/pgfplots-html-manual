@@ -58,7 +58,7 @@ Section~\ref{sec:pgfplots:export}.
     The \verbpdfref{\addplot3} command is the main interface for any three
     dimensional plot. It works in the same way as its two dimensional variant
     |\addplot| which has been described in all detail in
-    Section~\ref{sec:addplot} on page~\pageref{sec:addplot}.
+    Section~\ref{sec:addplot}.
 
     The \verbpdfref{\addplot3} command accepts the same input methods as the
     |\addplot| variant, including expression plotting, coordinates, files and
@@ -123,7 +123,7 @@ Section~\ref{sec:pgfplots:export}.
 \begin{addplot3operation}[]{coordinates}{\marg{coordinate list}}
     The \verbpdfref{\addplot3 coordinates} method works like its
     two-dimensional variant, \verbpdfref{\addplot coordinates} which is
-    described in all detail on page~\pageref{pgfplots:addplot:coordinates}:
+    described in all detail at~\ref{pgfplots:addplot:coordinates}:
 
     A long list of coordinates |(|\meta{x}|,|\meta{y}|,|\meta{z}|)| is
     expected, separated by white spaces. The input list can be either an
@@ -209,8 +209,7 @@ Section~\ref{sec:pgfplots:export}.
     column and $z_i$ in the third.
 
     A further column is read after $z_i$ if |point meta=explicit| has been
-    requested, see the documentation of \verbpdfref{\addplot file} on
-    page~\pageref{pgfplots:addplot:file} for details.
+    requested, see the documentation of \verbpdfref{\addplot file} at~\ref{pgfplots:addplot:file} for details.
 
     As for \verbpdfref{\addplot3 coordinates}, an |empty line| in the file
     marks the end of one matrix row.
@@ -1685,8 +1684,7 @@ streamed coordinate. We use a table here, and a table reads its color data from
 the column name provided in the |table/meta| key.
 
 The accepted format of colors is quite similar to that of colormap definitions
-(compare Section~\ref{sec:colormap:input:format} on
-page~\pageref{sec:colormap:input:format}). The common format is
+(compare Section~\ref{sec:colormap:input:format}). The common format is
 \declaretext{\meta{color model}|=|\meta{arguments}}. In contrast to the similar
 input format inside of colormap definitions, the syntax here has no round
 braces and does not have the \meta{length} argument. Nevertheless, the same
@@ -2208,7 +2206,7 @@ table {
     There are several fine-tuning parameters of the input/output file
     management, and it is even possible to invoke different programs than
     |lua| (see |contour gnuplot|). These details are discussed at the end of this
-    section, see below at page~\pageref{key:pgfplots:contour:gnuplot}.
+    section.
 \end{plottype}
 
 \begin{pgfplotskey}{contour/number=\marg{integer} (initially 5)}
@@ -2669,7 +2667,7 @@ save 'exporteddata.dat' data -ASCII
     and each last point on contour lines. The contour lines as such are defined
     by the |level| column since we wrote |point meta=\thisrow{level}|. Such a
     feature also allows |contour prepared| for nonstandard axes, compare the
-    examples for the |ternary| lib on page~\pageref{page:ternary:contour}.
+    examples for the |ternary| lib at~\ref{page:ternary:contour}.
 
     \begin{pgfplotskey}{contour/draw color=\marg{color} (initially mapped color)}
         Defines the draw color for every contour. Note that only |mapped color|
@@ -4321,8 +4319,7 @@ axis on top,
 
         The choice |mesh input=lattice| is the initial configuration for |mesh|
         and |surf| plots: it expects input in a compact matrix form as
-        described at the beginning of this section starting with
-        page~\pageref{sec:3d} and requires a |mesh/ordering| and perhaps
+        described at the beginning of this section and requires a |mesh/ordering| and perhaps
         end-of-scanline markers. It yields patches with exactly four corners
         and is compatible with |patch type=rectangle| and |patch type=bilinear|
         (the latter requiring to load the |patchplots| library). In this case,
