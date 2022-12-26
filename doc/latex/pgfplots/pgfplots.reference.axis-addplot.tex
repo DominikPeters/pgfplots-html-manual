@@ -461,6 +461,7 @@ The coordinates as such can be numbers as |+5|, |-1.2345e3|, |35.0e2|,
 Furthermore, |coordinates| allows to define ``meta data'' for each coordinate.
 The interpretation of meta data depends on the visualization technique: for
 scatter plots, meta data can be used to define colors or style associations for
+every point (see \ref{pgfplots:scatterclasses} for an example). Meta
 data (if any) must be provided after the coordinates and after error bar bounds
 (if any) in square brackets:
 %
@@ -479,6 +480,7 @@ data (if any) must be provided after the coordinates and after error bar bounds
 \end{tikzpicture}
 \end{codeexample}
 %
+Please refer to the documentation of |point meta| at~\ref{sec:pgfplots:point:meta} for more information about per point meta
 data.
 
 The coordinate stream can contain |empty line|s to tell \PGFPlots{} that the
@@ -877,7 +879,7 @@ prefix can always be omitted when used in a \PGFPlots{} method.
     the normal way.
 
 
-    \paragraph{Attention:}
+    \textbf{Attention:}
 
     Usually, \verbpdfref{\addplot table} only picks required entries, requiring
     linear runtime complexity. As soon as |read completely| is activated,
@@ -1018,7 +1020,7 @@ prefix can always be omitted when used in a \PGFPlots{} method.
     which are described below.
 
 
-    \paragraph{Remarks}
+    \textbf{Remarks}
 
     \begin{enumerate}
         \item What really goes on is a loop which assigns the current sample
@@ -1058,7 +1060,7 @@ prefix can always be omitted when used in a \PGFPlots{} method.
     \end{enumerate}
 
 
-    \paragraph{About the precision and number range:}
+    \textbf{About the precision and number range:}
         \index{Accuracy!High Precision for Plot Expression}%
         \index{Errors!dimension too large}%
         \index{Precision}%
@@ -1156,7 +1158,7 @@ prefix can always be omitted when used in a \PGFPlots{} method.
     |restrict x to domain|.
 
 
-    \paragraph{Remark for \Tikz{} users:}
+    \textbf{Remark for \Tikz{} users:}
 
     |/pgfplots/domain| and |/tikz/domain| are independent options. Please
     prefer the \PGFPlots{} variant (i.e.\@ provide |domain| to an axis,
@@ -1203,7 +1205,7 @@ prefix can always be omitted when used in a \PGFPlots{} method.
     as for the |domain| key applies here. See above for details.
 
 
-    \paragraph{Attention:}
+    \textbf{Attention:}
 
     |samples at| overrides |domain|, even if |domain| has been set \emph{after}
     |samples at|! Use |samples at={}| to clear \meta{coordinate list} and
@@ -1254,7 +1256,7 @@ prefix can always be omitted when used in a \PGFPlots{} method.
 \end{tikzpicture}
 \end{codeexample}
 
-    \paragraph{Limitations:}
+    \textbf{Limitations:}
 
     this feature is currently unavailable for |polaraxis| and |smithchart|.
 \end{pgfplotskey}
@@ -1347,7 +1349,7 @@ both file input and modifications by means of mathematical expressions.
         ``Unknown function'' error message.
 
 
-        \paragraph{Limitations:}
+        \textbf{Limitations:}
 
         this macro is currently unavailable if you use something of like
         |\addplot table {\loadedtable}| and the expression occurs outside of
@@ -1367,7 +1369,7 @@ both file input and modifications by means of mathematical expressions.
         index \meta{column index} (starting with $0$).
 
 
-        \paragraph{Limitations:}
+        \textbf{Limitations:}
 
         see limitations for |\thisrow|.
     \end{command}
@@ -2000,13 +2002,14 @@ points in your image. \PGFPlots{} will then squeeze the graphics correctly, and
 it reconfigures the axis to ensure a correct display of the result.
 
 
-\paragraph{Matlab versus other tools:}
+\textbf{Matlab versus other tools:}
 
 Although this section is based on Matlab images, the technique to import
 three-dimensional graphics is independent of Matlab. Thus, if you have a
 different tool, you need to read all that follows. However, users of Matlab
 \emph{can use a simplified export mechanism} which has been contributed by
 Jürnjakob Dugge. Please skip to Section~\ref{sec:plotgraphics3d:matlabscript}
+if you use Matlab to generate
 the graphics files (although you may want to take a brief look at the examples
 on the following pages to learn about flexibility or legends).
 
@@ -2232,7 +2235,7 @@ the axis limits. In the default configuration |scale uniformly strategy=auto|,
 \PGFPlots{} will \emph{never} shrink axis limits.
 
 
-\paragraph{Compatibility remark:}
+\textbf{Compatibility remark:}
 
 Note that the scaling capabilities have been improved for \PGFPlots{}
 version~1.6. In previous versions, only
@@ -2497,7 +2500,7 @@ with \verbpdfref{\addplot3} |graphics|:
 \begin{addplotoperation}[]{file}{\marg{name}}
 \labelprefix\label{pgfplots:addplot:file}
 
-    \paragraph{Deprecation note:}
+    \textbf{Deprecation note:}
 
     If you have data files, you should generally use |\addplot table|. The
     input type |\addplot file| is almost the same, but considerably less
