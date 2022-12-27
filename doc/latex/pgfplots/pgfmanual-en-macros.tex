@@ -17,6 +17,9 @@
 
 \providecommand\href[2]{\texttt{#1}}
 
+\newcommand{\defaultspan}[1]{\InlineClass{hl-default}{#1}}
+\newcommand{\definitionspan}[1]{\InlineClass{hl-def}{#1}}
+
 
 \colorlet{examplefill}{yellow!80!black}
 \definecolor{graphicbackground}{rgb}{0.96,0.96,0.8}
@@ -279,7 +282,15 @@
     \ifpgfutil@in@%
       \extractequalinitial#1\@nil%
     \else
-      \pgfmanualentryheadline{{\ttfamily\declarekey{#1}}\hfill(\extrakeytext no value)}%
+      % \pgfmanualentryheadline{%
+      %   \definitionspan{%
+      %     \texttt{%
+      %       \declarekey{#1}%
+      %     }%
+      %   }%
+      %   \defaultspan{(\extrakeytext no value)}%
+      % }%
+      \pgfmanualentryheadline{\definitionspan{\texttt{\declarekey{#1}}}\hfill\defaultspan{(\extrakeytext no value)}}%
       \def\mykey{#1}%
       \def\mypath{}%
       \def\myname{}%
@@ -324,7 +335,12 @@
       \extractinitial{#1}#2\@nil%
     \else
 %     \pgfmanualentryheadline{{\ttfamily\declarekey{#1}=}#2\hfill(\extrakeytext no default)}%
-      \pgfmanualentryheadline{{\ttfamily\declarekey{#1}=}#2\hfill}%
+      \pgfmanualentryheadline{%
+        \definitionspan{%
+          \texttt{\InlineClass{keyname2}{\declarekey{#1}}=}#2%
+        \hfill}
+      }%
+      % \pgfmanualentryheadline{{\ttfamily\declarekey{#1}=}#2\hfill}%
     \fi%
   \fi%
   \def\mykey{#1}%
@@ -335,16 +351,16 @@
 }
 
 \def\extractdefault#1#2(default #3)\@nil{%
-  \pgfmanualentryheadline{{\ttfamily\declarekey{#1}\opt{=}}\opt{#2}\hfill (\extrakeytext default {\ttfamily#3})}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\declarekey{#1}\opt{=}}\opt{#2}}\hfill \defaultspan{(\extrakeytext default {\ttfamily#3})}}%
 }
 
 \def\extractinitial#1#2(initially #3)\@nil{%
 %  \pgfmanualentryheadline{{\ttfamily\declarekey{#1}=}#2\hfill (\extrakeytext no default, initially {\ttfamily#3})}%
-  \pgfmanualentryheadline{{\ttfamily\declarekey{#1}=}#2\hfill (\extrakeytext initially {\ttfamily#3})}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\declarekey{#1}=}#2}\hfill \defaultspan{(\extrakeytext initially {\ttfamily#3})}}%
 }
 
 \def\extractequalinitial#1 (initially #2)\@nil{%
-  \pgfmanualentryheadline{{\ttfamily\declarekey{#1}}\hfill (\extrakeytext initially {\ttfamily#2})}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\declarekey{#1}}}\hfill \defaultspan{(\extrakeytext initially {\ttfamily#2})}}%
   \def\mykey{#1}%
   \def\mypath{}%
   \def\myname{}%
@@ -397,7 +413,7 @@
   \end{pgfmanualentry}
 }
 \def\extractpredefinedmethod#1(#2)\@nil{%
-  \pgfmanualentryheadline{Method \declare{\ttfamily #1}\texttt(#2\texttt) \hfill(predefined for all classes)}
+  \pgfmanualentryheadline{\definitionspan{Method \declare{\ttfamily #1}\texttt(#2\texttt)} \hfill\defaultspan{(predefined for all classes)}}
   \index{#1@\protect\texttt{#1} method}%
   \index{Methods!#1@\protect\texttt{#1}}
 }
@@ -406,7 +422,7 @@
 \newenvironment{ooclass}[1]{
   \begin{pgfmanualentry}
     \def\currentclass{#1}
-    \pgfmanualentryheadline{Class \declare{\texttt{#1}}}
+    \pgfmanualentryheadline{\definitionspan{Class \declare{\texttt{#1}}}}
     \index{#1@\protect\texttt{#1} class}%
     \index{Class #1@Class \protect\texttt{#1}}%
     \index{Classes!#1@\protect\texttt{#1}}
@@ -427,9 +443,9 @@
 \def\extractmethod#1(#2)\@nil{%
   \def\test{#1}
   \ifx\test\currentclass
-    \pgfmanualentryheadline{Constructor \declare{\ttfamily #1}\texttt(#2\texttt)}
+    \pgfmanualentryheadline{\definitionspan{Constructor \declare{\ttfamily #1}\texttt(#2\texttt)}}
   \else
-    \pgfmanualentryheadline{Method \declare{\ttfamily #1}\texttt(#2\texttt)}
+    \pgfmanualentryheadline{\definitionspan{Method \declare{\ttfamily #1}\texttt(#2\texttt)}}
   \fi
   \index{#1@\protect\texttt{#1} method}%
   \index{Methods!#1@\protect\texttt{#1}}
@@ -449,9 +465,9 @@
 \def\extractattribute#1=#2;\@nil{%
   \def\test{#2}%
   \ifx\test\@empty
-    \pgfmanualentryheadline{Private attribute \declare{\ttfamily #1} \hfill (initially empty)}
+    \pgfmanualentryheadline{\definitionspan{Private attribute \declare{\ttfamily #1}} \hfill \defaultspan{(initially empty)}}
   \else
-    \pgfmanualentryheadline{Private attribute \declare{\ttfamily #1} \hfill (initially {\ttfamily #2})}
+    \pgfmanualentryheadline{\definitionspan{Private attribute \declare{\ttfamily #1}} \hfill \defaultspan{(initially {\ttfamily #2})}}
   \fi
   \index{#1@\protect\texttt{#1} attribute}%
   \index{Attributes!#1@\protect\texttt{#1}}
@@ -462,7 +478,7 @@
 
 \newenvironment{predefinednode}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{Predefined node {\ttfamily\declare{#1}}}%
+    \pgfmanualentryheadline{\definitionspan{Predefined node {\ttfamily\declare{#1}}}}%
     \index{#1@\protect\texttt{#1} node}%
     \index{Predefined node!#1@\protect\texttt{#1}}
     \pgfmanualbody
@@ -473,7 +489,7 @@
 
 \newenvironment{coordinatesystem}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{Coordinate system {\ttfamily\declare{#1}}}%
+    \pgfmanualentryheadline{\definitionspan{Coordinate system {\ttfamily\declare{#1}}}}%
     \index{#1@\protect\texttt{#1} coordinate system}%
     \index{Coordinate systems!#1@\protect\texttt{#1}}
     \pgfmanualbody
@@ -485,7 +501,7 @@
 
 \newenvironment{snake}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{Snake {\ttfamily\declare{#1}}}%
+    \pgfmanualentryheadline{\definitionspan{Snake {\ttfamily\declare{#1}}}}%
     \index{#1@\protect\texttt{#1} snake}%
     \index{Snakes!#1@\protect\texttt{#1}}
     \pgfmanualbody
@@ -496,7 +512,7 @@
 
 \newenvironment{decoration}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{Decoration {\ttfamily\declare{#1}}}%
+    \pgfmanualentryheadline{\definitionspan{Decoration {\ttfamily\declare{#1}}}}%
     \index{#1@\protect\texttt{#1} decoration}%
     \index{Decorations!#1@\protect\texttt{#1}}
     \pgfmanualbody
@@ -527,7 +543,7 @@
 \makeatother
 
 \def\extractcommand#1#2\@@{%
-  \pgfmanualentryheadline{\declare{\texttt{\string#1}}#2}%
+  \pgfmanualentryheadline{\definitionspan{\declare{\texttt{\string#1}}#2}}%
   \removeats{#1}%
   \index{\strippedat @\protect\myprintocmmand{\strippedat}}}
 
@@ -594,7 +610,7 @@
 
 \newenvironment{filedescription}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{File {\ttfamily\declare{#1}}}%
+    \pgfmanualentryheadline{\definitionspan{File {\ttfamily\declare{#1}}}}%
     \index{#1@\protect\texttt{#1} file}%
     \index{Packages and files!#1@\protect\texttt{#1}}%
     \pgfmanualbody
