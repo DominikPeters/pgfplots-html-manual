@@ -88,7 +88,7 @@
 
 \newenvironment{pgflayout}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{\texttt{\string\pgfpagesuselayout\char`\{\declare{#1}\char`\}}\oarg{options}}
+    \pgfmanualentryheadline{\definitionspan{\texttt{\string\pgfpagesuselayout\char`\{\declare{#1}\char`\}}\oarg{options}}}
     \index{#1@\protect\texttt{#1} layout}%
     \index{Page layouts!#1@\protect\texttt{#1}}%
     \pgfmanualbody
@@ -123,7 +123,7 @@
 \newenvironment{math-function}[1]{
     \begin{pgfmanualentry}
         \extractmathfunctionname{#1}
-        \pgfmanualentryheadline{\texttt{#1}}%
+        \pgfmanualentryheadline{\definitionspan{\texttt{#1}}}%
         \index{\mathname @\protect\texttt{\mathname} math function}%
         \index{Math functions!\mathname @\protect\texttt{\mathname}}
         \pgfmanualbody
@@ -135,7 +135,7 @@
 \newenvironment{math-operator}[1]{
     \begin{pgfmanualentry}
         \extractmathoperatorname{#1}
-        \pgfmanualentryheadline{\texttt{#1}}%
+        \pgfmanualentryheadline{\definitionspan{\texttt{#1}}}%
         \index{\mathname @\protect\texttt{\mathname} math operator}%
         \index{Math operators!\mathname @\protect\texttt{\mathname}}
         \pgfmanualbody
@@ -146,7 +146,7 @@
 
 \newenvironment{math-constant}[1]{
     \begin{pgfmanualentry}
-        \pgfmanualentryheadline{\texttt{#1}}%
+        \pgfmanualentryheadline{\definitionspan{\texttt{#1}}}%
         \index{#1@\protect\texttt{#1} math constant}%
         \index{Math constants!#1@\protect\texttt{#1}}
         \pgfmanualbody
@@ -159,7 +159,7 @@
 
 
 \def\extractcommand#1#2\@@{%
-  \pgfmanualentryheadline{\declare{\texttt{\string#1}}#2}%
+  \pgfmanualentryheadline{\definitionspan{\declare{\texttt{\string#1}}#2}}%
   \removeats{#1}%
   \index{\strippedat @\protect\myprintocmmand{\strippedat}}}
 
@@ -175,9 +175,9 @@
 }
 
 \def\extractenvironement#1#2\@@{%
-  \pgfmanualentryheadline{{\ttfamily\char`\\begin\char`\{\declare{#1}\char`\}}#2}%
-  \pgfmanualentryheadline{{\ttfamily\ \ }\meta{environment contents}}%
-  \pgfmanualentryheadline{{\ttfamily\char`\\end\char`\{\declare{#1}\char`\}}}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\char`\\begin\char`\{\declare{#1}\char`\}}#2}}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\ \ }\meta{environment contents}}}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\char`\\end\char`\{\declare{#1}\char`\}}}}%
   \index{#1@\protect\texttt{#1} environment}%
   \index{Environments!#1@\protect\texttt{#1}}}
 
@@ -192,9 +192,9 @@
 }
 
 \def\extractplainenvironement#1#2\@@{%
-  \pgfmanualentryheadline{{\ttfamily\declare{\char`\\#1}}#2}%
-  \pgfmanualentryheadline{{\ttfamily\ \ }\meta{environment contents}}%
-  \pgfmanualentryheadline{{\ttfamily\declare{\char`\\end#1}}}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\declare{\char`\\#1}}#2}}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\ \ }\meta{environment contents}}}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\declare{\char`\\end#1}}}}%
   \index{#1@\protect\texttt{#1} environment}%
   \index{Environments!#1@\protect\texttt{#1}}}
 
@@ -209,16 +209,16 @@
 }
 
 \def\extractcontextenvironement#1#2\@@{%
-  \pgfmanualentryheadline{{\ttfamily\declare{\char`\\start#1}}#2}%
-  \pgfmanualentryheadline{{\ttfamily\ \ }\meta{environment contents}}%
-  \pgfmanualentryheadline{{\ttfamily\declare{\char`\\stop#1}}}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\declare{\char`\\start#1}}#2}}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\ \ }\meta{environment contents}}}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\declare{\char`\\stop#1}}}}%
   \index{#1@\protect\texttt{#1} environment}%
   \index{Environments!#1@\protect\texttt{#1}}}
 
 
 \newenvironment{shape}[1]{
   \begin{pgfmanualentry}
-      \pgfmanualentryheadline{Shape {\ttfamily\declare{#1}}}%
+      \pgfmanualentryheadline{\definitionspan{Shape \texttt{\declare{#1}}}}%
     \index{#1@\protect\texttt{#1} shape}%
     \index{Shapes!#1@\protect\texttt{#1}}
     \pgfmanualbody
@@ -239,7 +239,7 @@
 
 \def\gobble#1{}
 \def\extracthandler#1#2\@nil{%
-  \pgfmanualentryheadline{Key handler \meta{key}{\ttfamily/\declare{#1}}#2}%
+  \pgfmanualentryheadline{\definitionspan{Key handler \meta{key}\texttt{/\declare{#1}}#2}}%
   \index{\gobble#1@\protect\texttt{#1} handler}%
   \index{Key handlers!#1@\protect\texttt{#1}}
 }
@@ -351,16 +351,16 @@
 }
 
 \def\extractdefault#1#2(default #3)\@nil{%
-  \pgfmanualentryheadline{\definitionspan{\texttt{\declarekey{#1}\opt{=}}\opt{#2}}\hfill \defaultspan{(\extrakeytext default {\ttfamily#3})}}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\declarekey{#1}\opt{=}}\opt{#2}}\hfill \defaultspan{(\extrakeytext default \texttt{#3})}}%
 }
 
 \def\extractinitial#1#2(initially #3)\@nil{%
 %  \pgfmanualentryheadline{{\ttfamily\declarekey{#1}=}#2\hfill (\extrakeytext no default, initially {\ttfamily#3})}%
-  \pgfmanualentryheadline{\definitionspan{\texttt{\declarekey{#1}=}#2}\hfill \defaultspan{(\extrakeytext initially {\ttfamily#3})}}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\declarekey{#1}=}#2}\hfill \defaultspan{(\extrakeytext initially \texttt{#3})}}%
 }
 
 \def\extractequalinitial#1 (initially #2)\@nil{%
-  \pgfmanualentryheadline{\definitionspan{\texttt{\declarekey{#1}}}\hfill \defaultspan{(\extrakeytext initially {\ttfamily#2})}}%
+  \pgfmanualentryheadline{\definitionspan{\texttt{\declarekey{#1}}}\hfill \defaultspan{(\extrakeytext initially \texttt{#2})}}%
   \def\mykey{#1}%
   \def\mypath{}%
   \def\myname{}%
@@ -370,7 +370,7 @@
 
 % Introduces a key alias '/#1/<name of current key>'
 % to be used inside of \begin{key} ... \end{key}
-\def\keyalias#1{\vspace{-3pt}\item{\small alias {\ttfamily/#1/\myname}}\vspace{-2pt}\par}
+\def\keyalias#1{\vspace{-3pt}\item{\small alias \texttt{/#1/\myname}}\vspace{-2pt}\par}
 
 \newif\iffirsttime
 
@@ -413,7 +413,7 @@
   \end{pgfmanualentry}
 }
 \def\extractpredefinedmethod#1(#2)\@nil{%
-  \pgfmanualentryheadline{\definitionspan{Method \declare{\ttfamily #1}\texttt(#2\texttt)} \hfill\defaultspan{(predefined for all classes)}}
+  \pgfmanualentryheadline{\definitionspan{Method \declare{\texttt{#1}}\texttt(#2\texttt)} \hfill\defaultspan{(predefined for all classes)}}
   \index{#1@\protect\texttt{#1} method}%
   \index{Methods!#1@\protect\texttt{#1}}
 }
@@ -443,9 +443,9 @@
 \def\extractmethod#1(#2)\@nil{%
   \def\test{#1}
   \ifx\test\currentclass
-    \pgfmanualentryheadline{\definitionspan{Constructor \declare{\ttfamily #1}\texttt(#2\texttt)}}
+    \pgfmanualentryheadline{\definitionspan{Constructor \declare{\texttt{#1}}\texttt(#2\texttt)}}
   \else
-    \pgfmanualentryheadline{\definitionspan{Method \declare{\ttfamily #1}\texttt(#2\texttt)}}
+    \pgfmanualentryheadline{\definitionspan{Method \declare{\texttt{#1}}\texttt(#2\texttt)}}
   \fi
   \index{#1@\protect\texttt{#1} method}%
   \index{Methods!#1@\protect\texttt{#1}}
@@ -465,9 +465,9 @@
 \def\extractattribute#1=#2;\@nil{%
   \def\test{#2}%
   \ifx\test\@empty
-    \pgfmanualentryheadline{\definitionspan{Private attribute \declare{\ttfamily #1}} \hfill \defaultspan{(initially empty)}}
+    \pgfmanualentryheadline{\definitionspan{Private attribute \declare{\texttt{#1}}} \hfill \defaultspan{(initially empty)}}
   \else
-    \pgfmanualentryheadline{\definitionspan{Private attribute \declare{\ttfamily #1}} \hfill \defaultspan{(initially {\ttfamily #2})}}
+    \pgfmanualentryheadline{\definitionspan{Private attribute \declare{\texttt{#1}}} \hfill \defaultspan{(initially \texttt{ #2})}}
   \fi
   \index{#1@\protect\texttt{#1} attribute}%
   \index{Attributes!#1@\protect\texttt{#1}}
@@ -478,7 +478,7 @@
 
 \newenvironment{predefinednode}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{\definitionspan{Predefined node {\ttfamily\declare{#1}}}}%
+    \pgfmanualentryheadline{\definitionspan{Predefined node \texttt{\declare{#1}}}}%
     \index{#1@\protect\texttt{#1} node}%
     \index{Predefined node!#1@\protect\texttt{#1}}
     \pgfmanualbody
@@ -489,7 +489,7 @@
 
 \newenvironment{coordinatesystem}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{\definitionspan{Coordinate system {\ttfamily\declare{#1}}}}%
+    \pgfmanualentryheadline{\definitionspan{Coordinate system \texttt{\declare{#1}}}}%
     \index{#1@\protect\texttt{#1} coordinate system}%
     \index{Coordinate systems!#1@\protect\texttt{#1}}
     \pgfmanualbody
@@ -501,7 +501,7 @@
 
 \newenvironment{snake}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{\definitionspan{Snake {\ttfamily\declare{#1}}}}%
+    \pgfmanualentryheadline{\definitionspan{Snake \texttt{\declare{#1}}}}%
     \index{#1@\protect\texttt{#1} snake}%
     \index{Snakes!#1@\protect\texttt{#1}}
     \pgfmanualbody
@@ -512,7 +512,7 @@
 
 \newenvironment{decoration}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{\definitionspan{Decoration {\ttfamily\declare{#1}}}}%
+    \pgfmanualentryheadline{\definitionspan{Decoration \texttt{\declare{#1}}}}%
     \index{#1@\protect\texttt{#1} decoration}%
     \index{Decorations!#1@\protect\texttt{#1}}
     \pgfmanualbody
@@ -526,9 +526,9 @@
 \makeatletter
 \newenvironment{pathoperation}[3][]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{\textcolor{gray}{{\ttfamily\char`\\path}\
+    \pgfmanualentryheadline{\definitionspan{\textcolor{gray}{\texttt{\char`\\path}\
         \ \dots}
-      \declare{\texttt{#2}}#3\ \textcolor{gray}{\dots\texttt{;}}}%
+      \declare{\texttt{#2}}#3\ \textcolor{gray}{\dots\texttt{;}}}}%
     \def\pgfmanualtest{#1}%
     \ifx\pgfmanualtest\@empty%
       \index{#2@\protect\texttt{#2} path operation}%
@@ -552,11 +552,11 @@
 
 \newenvironment{package}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{{\ttfamily\char`\\usepackage\char`\{\declare{#1}\char`\}\space\space \char`\%\space\space  \LaTeX}}
+    \pgfmanualentryheadline{\definitionspan{\texttt{\char`\\usepackage\char`\{\declare{#1}\char`\}\space\space \char`\%\space\space  \LaTeX}}}
     \index{#1@\protect\texttt{#1} package}%
     \index{Packages and files!#1@\protect\texttt{#1}}%
-    \pgfmanualentryheadline{{\ttfamily\char`\\input \declare{#1}.tex\space\space\space \char`\%\space\space  plain \TeX}}
-    \pgfmanualentryheadline{{\ttfamily\char`\\usemodule[\declare{#1}]\space\space \char`\%\space\space  Con\TeX t}}
+    \pgfmanualentryheadline{\definitionspan{\texttt{\char`\\input \declare{#1}.tex\space\space\space \char`\%\space\space  plain \TeX}}}
+    \pgfmanualentryheadline{\definitionspan{\texttt{\char`\\usemodule[\declare{#1}]\space\space \char`\%\space\space  Con\TeX t}}}
     \pgfmanualbody
 }
 {
@@ -566,11 +566,11 @@
 
 \newenvironment{pgfmodule}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{{\ttfamily\char`\\usepgfmodule\char`\{\declare{#1}\char`\}\space\space\space
-        \char`\%\space\space  \LaTeX\space and plain \TeX\space and pure pgf}}
+    \pgfmanualentryheadline{\definitionspan{\texttt{\char`\\usepgfmodule\char`\{\declare{#1}\char`\}\space\space\space
+        \char`\%\space\space  \LaTeX\space and plain \TeX\space and pure pgf}}}
     \index{#1@\protect\texttt{#1} module}%
     \index{Modules!#1@\protect\texttt{#1}}%
-    \pgfmanualentryheadline{{\ttfamily\char`\\usepgfmodule[\declare{#1}]\space\space \char`\%\space\space  Con\TeX t\space and pure pgf}}
+    \pgfmanualentryheadline{\definitionspan{\texttt{\char`\\usepgfmodule[\declare{#1}]\space\space \char`\%\space\space  Con\TeX t\space and pure pgf}}}
     \pgfmanualbody
 }
 {
@@ -579,15 +579,15 @@
 
 \newenvironment{pgflibrary}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{{\ttfamily\char`\\usepgflibrary\char`\{\declare{#1}\char`\}\space\space\space
-        \char`\%\space\space  \LaTeX\space and plain \TeX\space and pure pgf}}
+    \pgfmanualentryheadline{\definitionspan{\texttt{\char`\\usepgflibrary\char`\{\declare{#1}\char`\}\space\space\space
+        \char`\%\space\space  \LaTeX\space and plain \TeX\space and pure pgf}}}
     \index{#1@\protect\texttt{#1} library}%
     \index{Libraries!#1@\protect\texttt{#1}}%
-    \pgfmanualentryheadline{{\ttfamily\char`\\usepgflibrary[\declare{#1}]\space\space \char`\%\space\space  Con\TeX t\space and pure pgf}}
-    \pgfmanualentryheadline{{\ttfamily\char`\\usetikzlibrary\char`\{\declare{#1}\char`\}\space\space
-        \char`\%\space\space  \LaTeX\space and plain \TeX\space when using \tikzname}}
-    \pgfmanualentryheadline{{\ttfamily\char`\\usetikzlibrary[\declare{#1}]\space
-        \char`\%\space\space  Con\TeX t\space when using \tikzname}}
+    \pgfmanualentryheadline{\definitionspan{\texttt{\char`\\usepgflibrary[\declare{#1}]\space\space \char`\%\space\space  Con\TeX t\space and pure pgf}}}
+    \pgfmanualentryheadline{\definitionspan{\texttt{\char`\\usetikzlibrary\char`\{\declare{#1}\char`\}\space\space
+        \char`\%\space\space  \LaTeX\space and plain \TeX\space when using \tikzname}}}
+    \pgfmanualentryheadline{\definitionspan{\texttt{\char`\\usetikzlibrary[\declare{#1}]\space
+        \char`\%\space\space  Con\TeX t\space when using \tikzname}}}
     \pgfmanualbody
 }
 {
@@ -596,10 +596,10 @@
 
 \newenvironment{tikzlibrary}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{{\ttfamily\char`\\usetikzlibrary\char`\{\declare{#1}\char`\}\space\space \char`\%\space\space  \LaTeX\space and plain \TeX}}
+    \pgfmanualentryheadline{\definitionspan{\texttt{\char`\\usetikzlibrary\char`\{\declare{#1}\char`\}\space\space \char`\%\space\space  \LaTeX\space and plain \TeX}}}
     \index{#1@\protect\texttt{#1} library}%
     \index{Libraries!#1@\protect\texttt{#1}}%
-    \pgfmanualentryheadline{{\ttfamily\char`\\usetikzlibrary[\declare{#1}]\space \char`\%\space\space Con\TeX t}}
+    \pgfmanualentryheadline{\definitionspan{\texttt{\char`\\usetikzlibrary[\declare{#1}]\space \char`\%\space\space Con\TeX t}}}
     \pgfmanualbody
 }
 {
@@ -610,7 +610,7 @@
 
 \newenvironment{filedescription}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{\definitionspan{File {\ttfamily\declare{#1}}}}%
+    \pgfmanualentryheadline{\definitionspan{File \texttt{\declare{#1}}}}%
     \index{#1@\protect\texttt{#1} file}%
     \index{Packages and files!#1@\protect\texttt{#1}}%
     \pgfmanualbody
@@ -622,7 +622,7 @@
 
 \newenvironment{packageoption}[1]{
   \begin{pgfmanualentry}
-    \pgfmanualentryheadline{{\ttfamily\char`\\usepackage[\declare{#1}]\char`\{pgf\char`\}}}
+    \pgfmanualentryheadline{\definitionspan{\texttt{\char`\\usepackage[\declare{#1}]\char`\{pgf\char`\}}}}
     \index{#1@\protect\texttt{#1} package option}%
     \index{Package options for \textsc{pgf}!#1@\protect\texttt{#1}}%
     \pgfmanualbody
@@ -634,7 +634,7 @@
 
 
 \newcommand\opt[1]{\textcolor{black!50!green}{#1}}
-\newcommand\ooarg[1]{{\ttfamily[}\meta{#1}{\ttfamily]}}
+\newcommand\ooarg[1]{\texttt{[}\meta{#1}\texttt{]}}
 
 % \def\opt{\afterassignment\pgfmanualopt\let\next=}
 % \def\pgfmanualopt{\ifx\next\bgroup\bgroup\color{black!50!green}\else{\color{black!50!green}\next}\fi}
@@ -707,7 +707,7 @@
 \extractclass#1@\par\topsep=0pt}
 \def\endclass{\endlist}
 \def\extractclass#1#2@{%
-\item{{{\ttfamily\char`\\documentclass}#2{\ttfamily\char`\{\declare{#1}\char`\}}}}%
+\item{{\texttt{\char`\\documentclass}#2\texttt{\char`\{\declare{#1}\char`\}}}}%
   \index{#1@\protect\texttt{#1} class}%
   \index{Classes!#1@\protect\texttt{#1}}}
 
