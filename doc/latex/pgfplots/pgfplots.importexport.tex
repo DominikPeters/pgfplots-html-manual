@@ -36,7 +36,7 @@ It is possible to export images to single \pdf{}-documents using routines of
     The |external| library has been written by Christian Feuersänger (author
     of \PGFPlots). It has been contributed to \Tikz{} as general purpose
     library, so the reference documentation along with all tweaks can be found
-    in~\cite[Section ``Externalization Library'']{tikz}. The command
+    in \href{https://tikz.dev/library-external}{the PGF/TikZ manual (Section ``Externalization Library'')}. The command
     |\usepgfplotslibrary{external}| is actually just a wrapper which loads
     |\usetikzlibrary{external}| or, if this library does not yet exist because
     the installed \pgfname{} has at most version $2.00$, it will load a copy
@@ -389,7 +389,7 @@ pdflatex -shell-escape main
     \begin{key}{/tikz/external/mode=\mchoice{convert with system call,list and make,$\dotsc$} (initially convert with system call)}
         This allows to change the default operation mode. There are a handful
         of choices possible, all of them are described in detail
-        in~\cite[Section ``Externalization Library'']{tikz}. The most useful
+        in \href{https://tikz.dev/library-external}{the PGF/TikZ manual (Section ``Externalization Library'')}. The most useful
         ones are probably the initial configuration |convert with system call|
         and the specialized choice |list and make|.
 
@@ -431,7 +431,7 @@ pdflatex -shell-escape main
     \end{key}
 
     The complete reference documentation and remaining options are documented
-    in~\cite[``Externalization Library'']{tikz}. This reference also contains
+    in \href{https://tikz.dev/library-external}{the PGF/TikZ manual (Section ``Externalization Library'')}. This reference also contains
     information about
     %
     \begin{itemize}
@@ -599,7 +599,7 @@ environment. Please note that it is absolutely necessary to use the syntax
 above, \emph{not} |\begin{pgfgraphicnamed}|.
 
 These steps are explained in much more detail in Section``Externalizing
-Graphics'' of~\cite{tikz}.
+Graphics'' of \href{https://tikz.dev/}{the PGF/TikZ manual}.
 
 
 \paragraph{Attention:}
@@ -649,7 +649,7 @@ and use
 instead. This will include the generated graphics files (and it will respect
 the |baseline| information stored in |.dpth| files). Consequently, you won't
 need \pgfname{} or \PGFPlots{} installed. See Section``Externalizing Graphics''
-of~\cite{tikz} for details.
+of~\href{https://tikz.dev/base-external}{the PGF/TikZ manual} for details.
 
 
 \section[import-matlab]{Importing From Matlab}
@@ -783,8 +783,8 @@ TeXstring = [ ...
 
 It is possible to write every single \Tikz{} picture into a scalable vector
 graphics (\texttt{.svg}) file. This has nothing to do with \PGFPlots{}, it is a
-separate driver of \PGF{}. Please refer to~\cite[Section ``Producing HTML / SVG
-Output'']{tikz}.
+separate driver of \PGF{}. Please refer to \href{https://tikz.dev/drivers#sec-10.2.4}{the PGF/TikZ manual (Section ``Producing HTML / SVG
+Output'')}.
 
 
 \section[python]{Generate PGFPlots Graphics Within Python}

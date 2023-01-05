@@ -14,8 +14,7 @@ However, most elements in this section are only interesting for advanced users
 \section[utility-commands]{Utility Commands}
 
 \begin{command}{\foreach \meta{variables} |in| \meta{list} \marg{commands}}
-    A powerful loop command provided by \Tikz{}, see~\cite[Section
-    ``Utilities'']{tikz}.
+    A powerful loop command provided by \Tikz{}, see \href{https://tikz.dev/utilities}{the TikZ manual} for details.
     %
 \begin{codeexample}[]
 \foreach \x in {1,2,...,4} {Iterating \x. }%
@@ -177,7 +176,7 @@ The result is `\pgfmathprintnumber{\pgfmathresult}'.
     Note that results of the |fpu| are typically not in human-readable format,
     so |\pgfmathprintnumber| is the preferred way to typeset such numbers.
 
-    Please refer to \cite{tikz} for more details.
+    Please refer to \href{https://tikz.dev/}{the PGF/TikZ manual} for more details.
 \end{command}
 
 \begin{pgfplotskey}{use fpu=\mchoice{true,false} (initially true)}
@@ -218,7 +217,7 @@ The result is `\pgfmathprintnumber{\pgfmathresult}'.
     comma-separated-list of arguments like |\t| or |\t,\a,\b|. The
     \meta{definition} is a math expression which makes use of these arguments.
 
-    Please refer to \cite{tikz} for more details.
+    Please refer to \href{https://tikz.dev/}{the PGF/TikZ manual} for more details.
 \end{key}
 
 \begin{command}{\pgfplotstableread\marg{file}}
@@ -249,8 +248,7 @@ The result is `\pgfmathprintnumber{\pgfmathresult}'.
     wrapper around |\pgfkeys|.
 
     A short introduction into |\pgfkeys| can be found in~\cite{keyvalintro}
-    whereas the complete reference is, of course, the \Tikz{}
-    manual~\cite{tikz}.
+    whereas the complete reference is, of course, \href{https://tikz.dev/}{the PGF/TikZ manual}.
 
     The key |\pgfkeysvalueof|\marg{key name} expands to the value of a key;
     |\pgfkeysgetvalue|\marg{key name}\marg{\textbackslash macro} stores the
@@ -321,7 +319,7 @@ The result is `\pgfmathprintnumber{\pgfmathresult}'.
 
 \begin{commandlist}{\path,\draw,\fill,\node,\matrix}
     These commands are \Tikz{} drawing commands all of which are documented
-    in~\cite{tikz}. They are used to draw or fill paths, generate text nodes or
+    in \href{https://tikz.dev/}{the PGF/TikZ manual}. They are used to draw or fill paths, generate text nodes or
     aligned text matrices. They are equivalent to
     \pgfmanualpdflabel{/tikz/draw}{}|\path[draw]|,
     \pgfmanualpdflabel{/tikz/fill}{}|\path[fill]|,

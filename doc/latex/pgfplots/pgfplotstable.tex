@@ -160,7 +160,7 @@ It is used with
 
     Knowledge of |pgfkeys| is useful for a deeper insight into this package, as
     |/.style|, |/.append style| etc.\@ are specific to |pgfkeys|. Please refer
-    to the \PGF{} manual~\cite[Section ``pgfkeys'']{tikz} or the shorter
+    to \href{https://tikz.dev/pgfkeys}{the PGF/TikZ manual, Section ``pgfkeys''} or the shorter
     introduction~\cite{keyvalintro} to learn more about |pgfkeys|. Otherwise,
     simply skip over to the examples provided in this document.
 
@@ -1885,7 +1885,7 @@ c & d \\
 \subsection{Number Formatting Options}
 \label{sec:number:printing}
 
-The following extract of \cite{tikz} explains how to configure number formats.
+The following extract of \href{https://tikz.dev/}{the PGF/TikZ manual} explains how to configure number formats.
 The common option prefix |/pgf/number format| can be omitted; it will be
 recognized automatically.
 
@@ -2932,7 +2932,7 @@ specific rows only.
 
     The date feature is implemented using the \PGF{} calendar module. This
     module employs the package |translator| (if it is loaded). I don't have
-    more details yet, sorry. Please refer to \cite{tikz} for more details.
+    more details yet, sorry. Please refer to \href{https://tikz.dev/}{the PGF/TikZ manual} for more details.
 \end{stylekey}
 
 
@@ -3278,8 +3278,7 @@ specific rows only.
     prepend ``|$\bf |'' and to append ``|$ \$|''. It should be noted that
     |pgfkeys| handles |/.style| and |/.code| in (basically) the same way --
     both are simple code keys and can be used as such. You can combine both
-    with |/.append style| and |/.append code|. Please refer to~\cite[section
-    about pgfkeys]{tikz} for details.
+    with |/.append style| and |/.append code|. Please refer to \href{https://tikz.dev/pgfkeys}{the PGF/TikZ manual, Section ``pgfkeys''} for details.
 
     As in |assign cell content|, the code can evaluate helper macros like
     |\pgfplotstablerow| to change only particular entries. Furthermore, the
@@ -3889,9 +3888,9 @@ The following keys can be used in both |\pgfplotstablecreatecol| and the easier
     \texttt{factorial}.}, |rand| (random between $-1$ and $1$ following a
     uniform distribution), |rnd| (random between $0$ and $1$ following a
     uniform distribution), number format conversions |hex|, |Hex|, |oct|, |bin|
-    and some more. The math parser has been written by Mark Wibrow and Till
-    Tantau~\cite{tikz}, the FPU routines have been developed as part of
-    \PGFPlots{}. The documentation for both parts can be found in~\cite{tikz}.
+    and some more. The math parser has been written by \href{https://tikz.dev/math}{Mark Wibrow and Till
+    Tantau}, the FPU routines have been developed as part of
+    \PGFPlots{}. The documentation for both parts can be found in~\href{https://tikz.dev/}{the PGF/TikZ manual}.
     \textbf{Attention:} Trigonometric functions work with degrees, not with
     radians, unless |trig format| is reconfigured!
 \end{stylekey}
@@ -4282,7 +4281,7 @@ The slope is `\slope'.
 \subsection{A summary of how to define and use styles and keys}
 
 This section summarizes features of |pgfkeys|. The complete documentation can
-be found in the \pgfname{} manual,~\cite{tikz}.
+be found in \href{https://tikz.dev/}{the PGF/TikZ manual}.
 
 \begin{handler}{{.style}=\marg{key-value-list}}
     Defines or redefines a style \meta{key}. A style is a normal key which will
@@ -4721,8 +4720,7 @@ The name of column 4 `\pgfplotsretval'.
 \subsection{Repeating Things: Loops}
 
 \begin{command}{\foreach \meta{variables} |in| \meta{list} \marg{commands}}
-    A powerful loop command provided by \Tikz, see~\cite[Section
-    ``Utilities'']{tikz}.
+    A powerful loop command provided by \Tikz, see \href{https://tikz.dev/pgffor}{the PGF/TikZ manual, Section ``Utilities''}.
     %
 \begin{codeexample}[pre={\begin{lateximage}},post={\end{lateximage}}]
 \foreach \x in {1,2,...,4} {Iterating \x. }%
