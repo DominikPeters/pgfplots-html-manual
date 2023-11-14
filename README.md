@@ -1,4 +1,10 @@
-# pgfplots
+# Online version of the pgfplots manual
+
+This is a HTML version of the pgfplots manual. It is available at https://tikz.dev/pgfplots/.
+
+It is produced using the `lwarp` package.
+
+## Readme of the pgfplots package
 
 pgfplots - Create normal/logarithmic plots in two and three dimensions for LaTeX/TeX/ConTeXt.
 
