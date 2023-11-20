@@ -1,8 +1,8 @@
 # Online version of the pgfplots manual
 
-This is a HTML version of the pgfplots manual. It is available at https://tikz.dev/pgfplots/.
+This is an HTML version of the [pgfplots](https://github.com/pgf-tikz/pgfplots) manual. It is available at https://tikz.dev/pgfplots/.
 
-It is produced using the `lwarp` package.
+It is produced using the `lwarp` package, based on similar code as my [PGF/TikZ HTML manual](https://github.com/DominikPeters/pgf-tikz-html-manual). For feedback and bug reports, please use the issue tracker at https://github.com/DominikPeters/tikz.dev-issues/issues.
 
 ## Readme of the pgfplots package
 
