@@ -113,6 +113,12 @@
 %\usetikzlibrary{external}
 %\tikzexternalize[prefix=figures/]{pgfplots}
 
+\def\partname{Chapter}
+% Redefine part numbering to Arabic
+\renewcommand{\thepart}{\arabic{part}}
+% Ensure section numbering is in the format 1.1, 1.2, ...
+\renewcommand{\thesection}{\thepart.\arabic{section}}
+
 \title{%
     Manual for Package \PGFPlots{}\\
     {\small 2D/3D Plots in \LaTeX{}, Version \pgfplotsversion}\\
