@@ -118,6 +118,9 @@
 \renewcommand{\thepart}{\arabic{part}}
 % Ensure section numbering is in the format 1.1, 1.2, ...
 \renewcommand{\thesection}{\thepart.\arabic{section}}
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother
 
 \title{%
     Manual for Package \PGFPlots{}\\
