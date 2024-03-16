@@ -260,15 +260,12 @@ plot coordinate).
         As soon as the axes limits are completely known, \PGFPlots{} applies
         a transformation which maps these floating point numbers into \TeX{}
         precision using transformations
-        %
-            \[
-                T_x(x) = 10^{s_x} \cdot x - a_x
-                \text{ and } T_y(y) = 10^{s_y} \cdot y - a_y
-                \text{ and (for 3D plots) } T_z(y) = 10^{s_z} \cdot z - a_z
-            \]
-        %
+        $T_x(x) = 10^{s_x} \cdot x - a_x$
+        and
+        $T_y(y) = 10^{s_y} \cdot y - a_y$
+        and (for 3D plots) $T_z(y) = 10^{s_z} \cdot z - a_z$
         with properly chosen integers $s_x, s_y, s_z \in \mathbb{Z}$ and shifts
-        $a_x,a_y, a_z\in \mathbb{R}$. Page~\pageref{pgfplots:disabledatascaling} contains a
+        $a_x,a_y, a_z\in \mathbb{R}$. Section~\ref{pgfplots:disabledatascaling} contains a
         description of |disabledatascaling| and provides more details about
         the transformation.\index{Accuracy!Floating Point in \PGFPlots}
     \item Some of the coordinate input routines use the powerful
@@ -638,7 +635,7 @@ Summary and remarks:
         `|x error index|'/`|y error index|' to \meta{source columns}. See
         Section~\ref{sec:errorbars} for details about error bars.
     \item It is possible to read per point meta data (usable in
-        |scatter src|, see page~\pageref{pgfplots:scatter:src}) as has been
+        |scatter src|, see Section~\ref{pgfplots:scatter:src}) as has been
         discussed for |\addplot coordinates| and |\addplot file| above. The meta data
         column can be provided using the |meta| key (or the |meta index| key).
     \item Use |\addplot table [|\meta{source columns}|] |\marg{\textbackslash

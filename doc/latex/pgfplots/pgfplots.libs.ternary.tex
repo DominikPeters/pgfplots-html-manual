@@ -46,13 +46,9 @@
     choose \emph{absolute data ranges} $x \in [x_{\min},x_{\max}]$, $y \in
     [y_{\min},y_{\max}]$ and $z \in [z_{\min},z_{\max}]$. The important thing
     is that the relative values
-    %
-        \[
-            \tilde x := \frac{x-x_{\min}}{x_{\max} - x_{\min}},\;
-            \tilde y := \frac{y-y_{\min}}{y_{\max} - y_{\min}},\;
-            \tilde z := \frac{z-z_{\min}}{z_{\max} - z_{\min}}
-        \]
-    %
+            $\tilde x := \frac{x-x_{\min}}{x_{\max} - x_{\min}}$,
+            $\tilde y := \frac{y-y_{\min}}{y_{\max} - y_{\min}}$,
+            $\tilde z := \frac{z-z_{\min}}{z_{\max} - z_{\min}}$
     sum up to $100\%$, i.e.\@ $\tilde x + \tilde y + \tilde z = 1$. Thus,
     \PGFPlots{} computes $\tilde x$, $\tilde y$ and $\tilde z$ and interprets
     them as barycentric (triangular) coordinates.
@@ -64,21 +60,21 @@
     What happens behind the scenes is that a data point $(x,y,z)$ is placed at
     $X,Y$ determined by
     %
-        \[
+        \begin{align*}
             \begin{bmatrix}
                 X(x,y,z)\\
                 Y(x,y,z)
             \end{bmatrix}
-            =
-            \tilde x A + \tilde y B + \tilde z C
-            =
+            &=
+            \tilde x A + \tilde y B + \tilde z C \\
+            &=
             \begin{bmatrix}
                 \frac12 {\tilde x+2 \tilde z}\\
                 \frac{\sqrt 3}{2} {\tilde x}
                 %\frac12 \frac{\tilde x+2 \tilde z}{\tilde x+\tilde y+\tilde z}\\
                 %\frac{\sqrt 3}{2} \frac{\tilde x}{\tilde x+\tilde y+\tilde z}
             \end{bmatrix}
-        \]
+        \end{align*}
     %
     where $A=(\nicefrac12,\nicefrac{\sqrt3}{2})$ is top corner of the triangle,
     $B=(0,0)$ the lower left and $C=(1,0)$ the lower right one. The $\tilde y$
