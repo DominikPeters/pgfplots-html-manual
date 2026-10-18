@@ -1,8 +1,16 @@
 # Online version of the pgfplots manual
 
+> [!IMPORTANT]
+> **This repository is archived.** Since October 2026 the HTML version of the pgfplots manual on [tikz.dev/pgfplots](https://tikz.dev/pgfplots/) is built in
+> [DominikPeters/tikz.dev](https://github.com/DominikPeters/tikz.dev)
+> (folder [`pgfplots/`](https://github.com/DominikPeters/tikz.dev/tree/master/pgfplots)),
+> together with the other manuals on tikz.dev; this fork's own files were
+> imported there with their history. Report problems in
+> [its issues](https://github.com/DominikPeters/tikz.dev/issues).
+
 This is an HTML version of the [pgfplots](https://github.com/pgf-tikz/pgfplots) manual. It is available at https://tikz.dev/pgfplots/.
 
-It is produced using the `lwarp` package, based on similar code as my [PGF/TikZ HTML manual](https://github.com/DominikPeters/pgf-tikz-html-manual). For feedback and bug reports, please use the issue tracker at https://github.com/DominikPeters/tikz.dev-issues/issues.
+It is produced using the `lwarp` package, based on similar code as my [PGF/TikZ HTML manual](https://github.com/DominikPeters/pgf-tikz-html-manual). For feedback and bug reports, please use the issue tracker at https://github.com/DominikPeters/tikz.dev/issues.
 
 ## Readme of the pgfplots package
 
